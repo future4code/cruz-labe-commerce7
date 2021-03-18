@@ -48,7 +48,8 @@ const DivFLexRow = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 4%;
+    margin-top: 0%;
+    flex-wrap: wrap;
 
     & > hr {
         margin: 0 2%;
@@ -80,8 +81,15 @@ const Lista = styled.ul`
 
 const Link = styled.a`
     margin-right: 14px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
     & > img {
         width: 22px;
+    }
+
+    &:hover {
+        color: #ff7f50;
     }
 `
 
@@ -107,11 +115,11 @@ export default class Footer extends React.Component {
                         <h3>Atendimento Online</h3>
                         <p>De segunda a sexta, das 8h às 17h.</p>
                         <DivFLexRow>
-                            <Link>
+                            <Link href='#'>
                                 Contato
                             </Link>
                             <hr />
-                            <Link>
+                            <Link href='#'>
                                 Fele conosco
                             </Link>
                         </DivFLexRow>
@@ -120,11 +128,11 @@ export default class Footer extends React.Component {
 
                 <DivFlexColumn>
                     <h3>Relacionamento</h3>
-                    <TextUpperCase>Política de privacidade</TextUpperCase>
-                    <TextUpperCase>Política de troca</TextUpperCase>
-                    <TextUpperCase>Manual do produto</TextUpperCase>
-                    <TextUpperCase>Guia de tamanhos</TextUpperCase>
-                    <TextUpperCase>Trabalhe conosco</TextUpperCase>
+                    <Link href='#'><TextUpperCase>Política de privacidade</TextUpperCase></Link>
+                    <Link href='#'><TextUpperCase>Política de troca</TextUpperCase></Link>
+                    <Link href='#'><TextUpperCase>Manual do produto</TextUpperCase></Link>
+                    <Link href='#'><TextUpperCase>Guia de tamanhos</TextUpperCase></Link>
+                    <Link href='#'><TextUpperCase>Trabalhe conosco</TextUpperCase></Link>
                 </DivFlexColumn>
 
                 <DivFlexColumn>
