@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;500;600&display=swap');
+
 .App {
-  text-align: center;
+  /* display: grid;
+  grid-template: 1fr / 1fr 4fr 1fr;
+  height: 100vh; */
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +39,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
