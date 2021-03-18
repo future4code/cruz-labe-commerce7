@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 
+import Prod from './Produto/Produto'
+
 import camiseta from '../../img/comiseta.jpg'
 import deleteIcon from '../../icons/delete.png'
 
@@ -93,6 +95,7 @@ export default class Carrinho extends React.Component {
                         <TextUpperCase>Carrinho</TextUpperCase>
                     </h1>
                     <ContainerProdutos>
+                        <Prod />
                         <Produto>
                             <ImagemProduto src={camiseta} />
                             <InfoProduto>
