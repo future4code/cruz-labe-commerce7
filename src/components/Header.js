@@ -41,12 +41,10 @@ export default class Header extends React.Component {
           </div>
           <div>
             <input type="text" placeholder="Procure por uma camiseta!" />
-            <button className="Botao-busca" type="submit" onChange={this.filtraLista}>
-              {/* <i class="fa fa-search" style="font-size:18px"></i> */}
-            </button>
+            <button className="Botao-busca" type="submit" onChange={this.filtraLista}>Buscar</button>
           </div>
           <div>
-            <img src={Carrinho} alt="carrinho" className="Carrinho-img"></img>
+            <img src={Carrinho} alt="carrinho" className="Carrinho-img" onClick={this.props.exibindoCarrinho}></img>
           </div>
         </div>
       </header>
