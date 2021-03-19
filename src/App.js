@@ -1,19 +1,17 @@
 import React from 'react';
 import './App.css';
 
-import Carrinho from './components/Carrinho/Carrinho'
 import Footer from './components/Footer/Footer';
 import Header from './components/Header'
-import Carrinho from './components/Carrinho/Carrinho'
+import Main from './components/Main/Main';
 
 function App() {
   return (
     <div className="App">
       <div>
-        <Header/>
-        {/* <main>Main</main> */}
-        <Carrinho />
-        <Footer>footer</Footer>
+        <Header />
+        <Main />
+        <Footer />
       </div>
     </div>
   );
