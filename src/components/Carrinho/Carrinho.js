@@ -5,9 +5,7 @@ import camiseta from '../../img/comiseta.jpg'
 import deleteIcon from '../../icons/delete.png'
 
 const DivPrincipal = styled.div`
-    grid-row: 1/ -1;
-    grid-column: 2 / 3;
-
+    grid-row: 2 / 3; 
     font-family: 'Yanone Kaffeesatz', sans-serif;
     letter-spacing: 2px;
 `
