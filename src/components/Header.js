@@ -42,7 +42,7 @@ export default class Header extends React.Component {
           <div>
             <input type="text" placeholder="Procure por uma camiseta!" />
             <button className="Botao-busca" type="submit" onChange={this.filtraLista}>
-              <i class="fa fa-search" style="font-size:18px"></i>
+              {/* <i class="fa fa-search" style="font-size:18px"></i> */}
             </button>
           </div>
           <div>
