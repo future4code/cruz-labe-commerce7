@@ -1,14 +1,18 @@
 import React from 'react';
 import './App.css';
+
 import Carrinho from './components/Carrinho/Carrinho'
+import Footer from './components/Footer/Footer';
+import Header from './components/Header'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Header</header>
-      <main>Main</main>
-      <Carrinho />
-      <footer>footer</footer>
+      <div>
+        <Header/>
+        <main>Main</main>
+        <Footer>footer</Footer>
+      </div>
     </div>
   );
 }

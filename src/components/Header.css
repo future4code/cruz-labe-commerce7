@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header {
+    padding: 10px;
+    background-color: #FAFAFF;
+  }
+
+  .App-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+  }
+
+  .App-header > div {
+      display: flex;
+      align-items: center;
+  }
+  
+  .Logo {
+      height: 70px;
+      width: 70px;
+      float: left;
+  }
+  
+  h2 {
+      float: left;
+      padding: 10px;
+  }
+  
+  .buscador {
+      text-align: center;
+      margin: 15px 0;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 5px;
+    width: 50px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: orange;
+    border: tomato 2px solid;
+    border-radius: 5px;
+  }
+  
+  button:hover {background-color: red}
+  
+  
+  .Carrinho-img {
+      height: 50px;
+      width: 50px;
+      float: right;
+      padding: 5px;
+  }
+  
