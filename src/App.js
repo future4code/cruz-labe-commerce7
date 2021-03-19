@@ -12,6 +12,10 @@ class App extends React.Component {
     filtroNome: ''
   }
 
+  exibindoCarrinho = () => {
+    this.setState({exibindoCarrinho: !this.state.exibindoCarrinho});
+  }
+
   setFiltroNome = (value) => {
     this.setState({filtroNome: value})
   }
@@ -20,7 +24,10 @@ class App extends React.Component {
     return (
       <div className="App">
         <div>
-          <Header setFiltroNome={this.setFiltroNome}/>
+          <Header 
+            setFiltroNome={this.setFiltroNome}
+            exibindoCarrinho={this.exibindoCarrinho}
+          />
           <Main 
             exibindoCarrinho={this.props.exibindoCarrinho} 
             filtroNome={this.props.filtroNome}
