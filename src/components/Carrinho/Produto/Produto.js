@@ -7,8 +7,10 @@ import RemoveProduto from '../RemoveProduto/RemoveProduto';
 
 const DivPrincipal = styled.div`
     display: grid;
-    grid-template: 1fr / .6fr 2fr .8fr;
+    grid-template: 1fr / .4fr 2fr .6fr;
+    gap: 10px;
     margin: 1.4% 0;
+    
 `
 
 const ImagemProduto = styled.img`

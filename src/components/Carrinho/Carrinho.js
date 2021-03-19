@@ -7,6 +7,7 @@ const DivPrincipal = styled.div`
     grid-row: 2 / 3; 
     font-family: 'Yanone Kaffeesatz', sans-serif;
     letter-spacing: 2px;
+    margin-top: 4%;
 `
 
 const DivFlexColumn = styled.div`
@@ -26,17 +27,29 @@ const TextUpperCase = styled.span`
 `
 
 const ContainerProdutos = styled(DivFlexColumn)`
-    /* width: 80%; */
 `
 
 const FinalizarCompra = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, .38);
+    padding: 10px 0;
+
+    & > p {
+        font-size: 1.2em;
+    }
 `
 
 const ButtonAction = styled.button`
-    text-align: center
+    text-align: center;
+    width: 20%;
+    font-weight: bold;
+`
+
+const PrecoTotal = styled.span`
+    color: #ff7f50;
+    font-weight: 500;
 `
 
 export default class Carrinho extends React.Component {
@@ -54,8 +67,8 @@ export default class Carrinho extends React.Component {
                         <Produto />
                     </ContainerProdutos>
                     <FinalizarCompra>
-                        <p>Total: R$69,90</p>
-                        <ButtonAction>Finalizar Compra</ButtonAction>
+                        <p>Total: <PrecoTotal>R$69,90</PrecoTotal></p>
+                        <ButtonAction><TextUpperCase>Finalizar Compra</TextUpperCase></ButtonAction>
                     </FinalizarCompra>
                 </DivFlexColumn>
             </DivPrincipal>

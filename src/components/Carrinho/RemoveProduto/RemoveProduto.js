@@ -25,6 +25,11 @@ const DivPrincipal = styled.div`
 const Icon = styled.img`
     width: 30px;
     margin-bottom: 2%;
+
+    &:hover {
+        opacity: .6;
+        cursor: pointer;
+    }
 `
 
 export default class RemoveProduto extends React.Component {

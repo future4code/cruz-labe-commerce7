@@ -47,6 +47,7 @@ const ButtonAction = styled.button`
     color: white;
     font-weight: bold;
     font-size: 1.2em;
+    flex: .2;
 `
 
 export default class InfoProduto extends React.Component {
