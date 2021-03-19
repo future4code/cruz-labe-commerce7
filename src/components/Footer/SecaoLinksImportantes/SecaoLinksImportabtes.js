@@ -8,6 +8,7 @@ import {
 } from '../footer-styles-global'
 
 const DivPrincipal = styled(DivFlexColumn)`
+    justify-content: space-between;
     & > a {
         margin: 0;
         margin-top: 6%;

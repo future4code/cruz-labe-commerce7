@@ -4,9 +4,7 @@ import styled from 'styled-components'
 import Produto from './Produto/Produto'
 
 const DivPrincipal = styled.div`
-    grid-row: 1/ -1;
-    grid-column: 2 / 3;
-
+    grid-row: 2 / 3; 
     font-family: 'Yanone Kaffeesatz', sans-serif;
     letter-spacing: 2px;
 `
