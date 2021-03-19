@@ -1,23 +1,35 @@
-import React from "react";
+import React from 'react';
 import Logo from "../img/logo.png";
 import Carrinho from "../img/twotone_shopping_cart_black_18dp.png";
 import "./Header.css"
 
-class Header extends React.Component {
-  state = {
-    camisetas: [],
-    buscaTermo: "",
-  };
 
-  editarTermoBusca = (e) => {
-    this.setState({ buscaTermo: e.target.value });
-  };
+export default class Header extends React.Component {
+    
+    state = {
+      camisetas : [
 
-  buscaDinamica = () => {
-    return this.state.camisetas.filter((camiseta) =>
-      camiseta.toLowerCase().includes(this.state.buscaTermo.toLowerCase())
-    );
-  };
+      ],
+      items: []
+    };
+
+
+    filtraLista = this.filtraLista.bind(this);
+
+
+  filtraLista(e){
+    let listaAtualizada = this.state.camisetas
+
+    listaAtualizada = listaAtualizada.filter(item => {
+      return item.toLowerCase().search(
+        e.target.value.toLowerCase()
+        ) !== -1;
+    });
+
+    this.setState({
+      items: listaAtualizada
+    });
+  }
 
   render() {
     return (
@@ -27,17 +39,12 @@ class Header extends React.Component {
             <img src={Logo} alt="logo" className="Logo" />
             <h2>LabSpace</h2>
           </div>
-
           <div>
-            <input
-              type="text"
-              value={this.state.buscaTermo}
-              onChange={this.editarTermoBusca}
-              placeholder="Procure por uma camiseta!"
-            />
-            <button type="submit"></button>
+            <input type="text" placeholder="Procure por uma camiseta!" />
+            <button className="Botao-busca" type="submit" onChange={this.filtraLista}>
+              <i class="fa fa-search" style="font-size:18px"></i>
+            </button>
           </div>
-
           <div>
             <img src={Carrinho} alt="carrinho" className="Carrinho-img"></img>
           </div>
@@ -47,4 +54,3 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
