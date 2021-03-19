@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components'
 
 import camiseta from '../../../img/comiseta.jpg'
-import deleteIcon from '../../../icons/delete.png'
 import InfoProduto from '../InfoProduto/InfoProduto';
+import RemoveProduto from '../RemoveProduto/RemoveProduto';
 
 const DivPrincipal = styled.div`
     display: grid;
-    grid-template: 1fr / .6fr 2fr 1fr 1fr;
+    grid-template: 1fr / .6fr 2fr .8fr;
+    margin: 1.4% 0;
 `
 
 const ImagemProduto = styled.img`
@@ -23,6 +24,7 @@ export default class Produto extends React.Component {
             <DivPrincipal>
                 <ImagemProduto src={camiseta} />
                 <InfoProduto />
+                <RemoveProduto />
             </DivPrincipal>
         )
     }
