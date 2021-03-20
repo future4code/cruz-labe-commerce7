@@ -4,6 +4,7 @@ import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header'
 
+
 import Main from './components/Main/Main';
 
 class App extends React.Component { 
@@ -16,8 +17,8 @@ class App extends React.Component {
     this.setState({exibindoCarrinho: !this.state.exibindoCarrinho});
   }
 
-  setFiltroNome = (value) => {
-    this.setState({filtroNome: value})
+  setFiltroBusca = (value) => {
+    this.setState({filtroBusca: value})
   }
 
   render() {
@@ -25,7 +26,7 @@ class App extends React.Component {
       <div className="App">
         <div>
           <Header 
-            setFiltroNome={this.setFiltroNome}
+            setFiltroBusca={this.setFiltroBusca}
             exibindoCarrinho={this.exibindoCarrinho}
           />
           <Main 
