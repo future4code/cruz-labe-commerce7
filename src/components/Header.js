@@ -5,31 +5,38 @@ import "./Header.css"
 
 
 export default class Header extends React.Component {
-    
-    state = {
-      camisetas : [
+  state = {
+    inputBusca: "",
+  };
 
-      ],
-      items: []
-    };
-
-
-    filtraLista = this.filtraLista.bind(this);
+  onChangeBusca = (event) => {
+    this.setState({ inputBusca: event.target.value });
+    this.props.setFiltroBusca(event.target.value)
+  };
 
 
-  filtraLista(e){
-    let listaAtualizada = this.state.camisetas
+  // state = {
+  //   camisetas : [
 
-    listaAtualizada = listaAtualizada.filter(item => {
-      return item.toLowerCase().search(
-        e.target.value.toLowerCase()
-        ) !== -1;
-    });
+  //   ],
+  //   items: []
+  // };
 
-    this.setState({
-      items: listaAtualizada
-    });
-  }
+  //   filtraLista = this.filtraLista.bind(this);
+
+  // filtraLista(e){
+  //   let listaAtualizada = this.state.camisetas
+
+  //   listaAtualizada = listaAtualizada.filter(item => {
+  //     return item.toLowerCase().search(
+  //       e.target.value.toLowerCase()
+  //       ) !== -1;
+  //   });
+
+  //   this.setState({
+  //     items: listaAtualizada
+  //   });
+  // }
 
   render() {
     return (
@@ -40,11 +47,21 @@ export default class Header extends React.Component {
             <h2>LabSpace</h2>
           </div>
           <div>
-            <input type="text" placeholder="Procure por uma camiseta!" />
-            <button className="Botao-busca" type="submit" onChange={this.filtraLista}>Buscar</button>
+            <input type="text" placeholder="Procure por uma camiseta!" onChange={this.onChangeBusca} value={this.state.inputBusca}/>
+            <button
+              className="Botao-busca"
+              type="submit"
+            >
+              Buscar
+            </button>
           </div>
           <div>
-            <img src={Carrinho} alt="carrinho" className="Carrinho-img" onClick={this.props.exibindoCarrinho}></img>
+            <img
+              src={Carrinho}
+              alt="carrinho"
+              className="Carrinho-img"
+              onClick={this.props.exibindoCarrinho}
+            ></img>
           </div>
         </div>
       </header>
