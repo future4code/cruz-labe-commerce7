@@ -34,11 +34,12 @@ const Icon = styled.img`
 
 export default class RemoveProduto extends React.Component {
     render() {
+        const {id} = this.props
         return (
             <DivPrincipal>
                 <Title><TextUpperCase>Remover</TextUpperCase></Title>
                 <div>
-                    <Icon src={deleteIcon} alt=''/>
+                    <Icon onClick={() => {this.props.removerDoCarrinho(id)}} src={deleteIcon} alt=''/>
                 </div>
             </DivPrincipal>
         )

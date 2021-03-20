@@ -9,8 +9,8 @@ import Main from './components/Main/Main';
 
 class App extends React.Component { 
   state = {
-    exibindoCarrinho: false,
-    filtroBusca: ''
+    exibindoCarrinho: true,
+    filtroNome: ''
   }
 
   exibindoCarrinho = () => {
@@ -31,7 +31,7 @@ class App extends React.Component {
           />
           <Main 
             exibindoCarrinho={this.state.exibindoCarrinho} 
-            filtroBusca={this.state.filtroBusca}
+            filtroNome={this.state.filtroNome}
           />
           <Footer />
         </div>
