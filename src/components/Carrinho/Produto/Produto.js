@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import camiseta from '../../../img/comiseta.jpg'
 import InfoProduto from '../InfoProduto/InfoProduto';
 import RemoveProduto from '../RemoveProduto/RemoveProduto';
 
@@ -21,12 +20,30 @@ const ImagemProduto = styled.img`
 `
 
 export default class Produto extends React.Component {
+    state = {
+        produto: {}
+    }
+
+    componentDidMount = () => {
+        this.props.produto.quantidade = 1;
+        this.setState({produto: this.props.produto})
+    }
+
     render() {
         return (
             <DivPrincipal>
-                <ImagemProduto src={camiseta} />
-                <InfoProduto />
-                <RemoveProduto />
+                <ImagemProduto 
+                    src={this.state.produto.imageUrl} 
+                />
+
+                <InfoProduto
+                    produto={this.state.produto}
+                />
+
+                <RemoveProduto 
+                    removerDoCarrinho={this.props.removerDoCarrinho} 
+                    id={this.state.produto.id}
+                />
             </DivPrincipal>
         )
     }
