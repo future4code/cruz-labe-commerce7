@@ -15,25 +15,52 @@ export default class Main extends React.Component {
                 id: 1,
                 name: 'Camiseta Renan de Almeida',
                 value: 69.90,
-                imageUrl: '../../img/comiseta.jpg'
+                imageUrl: '../../img/comiseta.jpg',
+                quantidade: 0
             },
 
             {
                 id: 2,
                 name: 'Camiseta Renan de Almeida',
                 value: 69.90,
-                imageUrl: '../../img/comiseta.jpg'
+                imageUrl: '../../img/comiseta.jpg',
+                quantidade: 0
             },
 
             {
                 id: 3,
                 name: 'Camiseta Renan de Almeida',
                 value: 69.90,
-                imageUrl: '../../img/comiseta.jpg'
+                imageUrl: '../../img/comiseta.jpg',
+                quantidade: 0
             }
         ],
 
-        produtosCarrinho: []
+        produtosCarrinho: [
+            {
+                id: 1,
+                name: 'Camiseta Renan de Almeida',
+                value: 69.90,
+                imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
+                quantidade: 0,
+            },
+
+            {
+                id: 2,
+                name: 'Camiseta Renan de Almeida',
+                value: 69.90,
+                imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
+                quantidade: 0
+            },
+
+            {
+                id: 3,
+                name: 'Camiseta Renan de Almeida',
+                value: 69.90,
+                imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
+                quantidade: 0
+            }
+        ]
     }
 
     removerDoCarrinho = (id) => {
@@ -50,11 +77,11 @@ export default class Main extends React.Component {
                 {this.props.exibindoCarrinho &&
                     <Carrinho 
                         produtos={this.state.produtosCarrinho}
-                        remover={this.props.removerDoCarrinho}
+                        removerDoCarrinho={this.removerDoCarrinho}
                     />
                 }
                 {/* {!this.props.exibindoCarrinho && //CHAMAR PRODUTOS } */}
-                <Carrinho />
+                {/* <Carrinho /> */}
             </DivPrincipal>
         )
     }

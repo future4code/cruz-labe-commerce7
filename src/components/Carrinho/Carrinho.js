@@ -54,6 +54,14 @@ const PrecoTotal = styled.span`
 
 export default class Carrinho extends React.Component {
     render() {
+        const produtos = this.props.produtos.map((produto) => {
+            return <Produto 
+                        key={produto.id.toString()} 
+                        produto={produto}
+                        removerDoCarrinho={this.props.removerDoCarrinho}
+                    />
+        })
+
         return (
             <DivPrincipal>
                 <DivFlexColumn>
@@ -61,10 +69,7 @@ export default class Carrinho extends React.Component {
                         <TextUpperCase>Carrinho</TextUpperCase>
                     </h1>
                     <ContainerProdutos>
-                        <Produto />
-                        <Produto />
-                        <Produto />
-                        <Produto />
+                        {produtos}
                     </ContainerProdutos>
                     <FinalizarCompra>
                         <p>Total: <PrecoTotal>R$69,90</PrecoTotal></p>
