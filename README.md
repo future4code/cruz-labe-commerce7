@@ -28,7 +28,6 @@ Projeto LabSpace Store publicado na plataform surge:
 ### Lab Space Store
 
 ![LabSpace-Store](https://user-images.githubusercontent.com/54940729/111920838-07659480-8a70-11eb-95aa-983d3bb97915.png)
-
 <br/><br/>
 
 ### Requisitos do projeto
@@ -46,7 +45,6 @@ Projeto LabSpace Store publicado na plataform surge:
 - [X] Filtro
     - Por valor mínimo e máximo
     - Por nome do produto
-
 <br/><br/>
 
 ### Status do projeto
@@ -62,7 +60,6 @@ Projeto LabSpace Store publicado na plataform surge:
 - Capacidade de remover itens do carrinho
 - Mostrar o valor total do carrinho
 - Extras, além do projeto MVP
-
 <br/><br/>
 
 ### Tecnologias
@@ -91,9 +88,9 @@ Por padrão a aplicação rodará localmente na porta 3000.
 <br/><br/>
 
 ### Agradecimentos
-
-<p>Sem dúvidas, cada momento de trabalho em equipe é um momento único de aprendizagem e troca de experiências.<br/>
-  E fazer parte desta equipe não foi diferente, mas com um passo além...<br/>
+<p>
+Sem dúvidas, cada momento de trabalho em equipe é um momento único de aprendizagem e troca de experiências.<br/>
+E fazer parte desta equipe não foi diferente, mas com um passo além...<br/>
 Obrigada aos colegas e profissionais brilhantes Isaac e Fabiana, pelo senso de cooperação, de troca e pela sensibilidade na parceria com foco no crescimento mútuo.
 Pessoas e profissionais assim, são senão espelhos e inspirações nas coisas que podemos melhorar continuamente para apresentar um resultado fantástico!<br/> Parabéns pelo projeto time! Vocês são sensacionais...</p>
 
