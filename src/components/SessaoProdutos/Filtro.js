@@ -32,13 +32,14 @@ const Input = styled.input`
   letter-spacing: 2px;
 `
 
-export class Filtro extends React.Component {
+export default class Filtro extends React.Component {
   render() {
     return <ContainerDeFiltros>
       <h3>Filtro:</h3>
 
       <Input 
         type="number"
+        min="0"
         value={this.props.filtroMinimo}
         onChange={this.props.handleMinValor}
         placeholder="Valor mínimo"
@@ -46,18 +47,11 @@ export class Filtro extends React.Component {
       <span>-</span>
       <Input 
         type="number"
+        min="0"
         value={this.props.filtroMaximo}
         onChange={this.props.handleMaxValor}
         placeholder="Valor máximo"
       />
-        {/* <ContainerDoInput>
-          Busca por nome:
-          <input
-            type="text"
-            value={this.props.filtroNome}
-            onChange={this.props.onChangeFiltroNome}
-          />
-        </ContainerDoInput> */}
     </ContainerDeFiltros>
   }
 }
