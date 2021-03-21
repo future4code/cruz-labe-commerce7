@@ -53,14 +53,6 @@ export default class Main extends React.Component {
         this.props.atualizaQuantidadeCarrinho(novoCarrinho.length)
     }
 
-    onChangeFiltroMaximo = (event) => {
-        this.setState({filtroMaximo: event.target.value})
-    }
-
-    onChangeFiltroMinimo = (event) => {
-        this.setState({filtroMinimo: event.target.value})
-    }
-
     // onChangeFiltroNome = (event) => {
     //     this.setState({filtroNome: event.target.value})
     // }

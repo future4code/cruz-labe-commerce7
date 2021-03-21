@@ -13,7 +13,14 @@ export default class SessaoProdutos extends React.Component {
     state = {
         filtroMinimo: 100,
         filtroMaximo: 100,
-        filtroNome: 'Produto'
+    }
+
+    onChangeFiltroMaximo = (event) => {
+        this.setState({filtroMaximo: event.target.value})
+    }
+
+    onChangeFiltroMinimo = (event) => {
+        this.setState({filtroMinimo: event.target.value})
     }
 
     adicionarAoCarrinho = (id) => {
@@ -36,17 +43,16 @@ export default class SessaoProdutos extends React.Component {
             //   }
             // )
             this.props.atualizarCarrinho(novoCarrinho)
-        }
-            // const produtoAdicionado = produtos.find(produto => id === produto.id)
-            // const novoCarrinho = [...this.state.carrinho, {...produtoAdicionado, quantidade: 1}]
-            // this.setState({carrinho: novoCarrinho})
-        
+        }   
     }
 
     render() {
         return (
             <DivPrincipal>
-                <Filtro />
+                <Filtro 
+                    handleMinValor={this.onChangeFiltroMinimo}
+                    handleMaxValor={this.onChangeFiltroMaximo}
+                />
                 <ListaDeProdutos 
                     produtos={this.props.produtos}
                     adicionarAoCarrinho={this.adicionarAoCarrinho}
