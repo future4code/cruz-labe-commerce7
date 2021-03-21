@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ContainerDosCards = styled.div`
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.38);
   display: flex;
   flex-direction: column;
   align-items: center;
