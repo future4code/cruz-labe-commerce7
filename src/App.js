@@ -40,6 +40,7 @@ class App extends React.Component {
             exibindoCarrinho={this.state.exibindoCarrinho} 
             filtroBusca={this.state.filtroBusca}
             atualizaQuantidadeCarrinho={this.atualizaQuantidadeCarrinho}
+            voltarParaProdutos={this.exibindoCarrinho}
           />
           <Footer />
         </div>

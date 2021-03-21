@@ -6,7 +6,7 @@ import { ListaDeProdutos } from './ListaDeProdutos';
 
 const DivPrincipal = styled.div`
     display: grid;
-    grid-template: .2fr 2fr/ 1fr;
+    grid-template: .1fr 2fr/ 1fr;
 `
 
 export default class SessaoProdutos extends React.Component {

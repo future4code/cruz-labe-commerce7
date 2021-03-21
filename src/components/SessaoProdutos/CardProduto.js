@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ContainerDosCards = styled.div`
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.38);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,6 +12,7 @@ const ContainerDosCards = styled.div`
 
   & > img {
     width: 180px;
+    max-height: 50%;
   }
 `;
 
@@ -20,6 +21,8 @@ const InformacaoDosCards = styled.div`
   flex-direction: column;
   padding: 16px;
   width: 100%;
+  justify-content: space-between;
+  flex: 1;
 
   p {
     margin: 4px 0;
