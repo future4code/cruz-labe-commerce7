@@ -44,7 +44,7 @@ export default class Header extends React.Component {
         <div className="App-header">
           <div>
             <img src={Logo} alt="logo" className="Logo" />
-            <h2>LabSpace</h2>
+            <h2>Labe<span id="textoLaranja">Space</span></h2>
           </div>
           <div>
             <input type="text" placeholder="Procure por uma camiseta!" onChange={this.onChangeBusca} value={this.state.inputBusca}/>
@@ -55,14 +55,14 @@ export default class Header extends React.Component {
               Buscar
             </button>
           </div>
-          <div>
+          <div className="divCarrinho">
             <img
               src={Carrinho}
               alt="carrinho"
               className="Carrinho-img"
               onClick={this.props.exibindoCarrinho}
             ></img>
-            <span>{this.props.quantidadeNoCarrinho}</span>
+            <span className="qtdProduto">{this.props.quantidadeNoCarrinho}</span>
           </div>
         </div>
       </header>

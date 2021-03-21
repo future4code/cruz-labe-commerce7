@@ -14,7 +14,7 @@ const Rodape = styled.footer`
     font-family: 'Yanone Kaffeesatz', sans-serif;
 
     display: grid;
-    grid-template: 1fr / repeat(3, 1fr);
+    grid-template: 1fr / repeat(auto-fill, minmax(210px, 1fr));
 `
 
 export default class Footer extends React.Component {
