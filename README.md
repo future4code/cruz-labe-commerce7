@@ -94,7 +94,7 @@ Por padrão a aplicação rodará na porta 3000 localmente.
 
 <p>Sem dúvidas, cada momento de trabalho em equipe é um momento único de aprendizagem e troca de experiências.<br/>
   E fazer parte desta equipe não foi diferente, mas com um passo além...<br/>
-Obrigada aos colegas e profissionais brilhantes Isaac e Fabiana, pelo senso de cooperação, de troca e pela sensibilidade na parceria com foco no crescimento mútuo.<br/> 
+Obrigada aos colegas e profissionais brilhantes Isaac e Fabiana, pelo senso de cooperação, de troca e pela sensibilidade na parceria com foco no crescimento mútuo.
 Pessoas e profissionais assim, são senão espelhos e inspirações nas coisas que podemos melhorar continuamente para apresentar um resultado fantástico!<br/> Parabéns pelo projeto time! Vocês são sensacionais...</p>
 
 * Laís Lopes - https://www.linkedin.com/in/laismaas/
