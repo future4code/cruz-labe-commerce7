@@ -12,6 +12,7 @@ const ContainerDosCards = styled.div`
 
   & > img {
     width: 180px;
+    max-height: 50%;
   }
 `;
 
@@ -20,6 +21,8 @@ const InformacaoDosCards = styled.div`
   flex-direction: column;
   padding: 16px;
   width: 100%;
+  justify-content: space-between;
+  flex: 1;
 
   p {
     margin: 4px 0;
