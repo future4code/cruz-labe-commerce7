@@ -23,6 +23,7 @@ class App extends React.Component {
   }
 
   atualizaQuantidadeCarrinho = (quantidade) => {
+    console.log(quantidade)
     this.setState({quantidadeNoCarrinho: quantidade})
   }
 

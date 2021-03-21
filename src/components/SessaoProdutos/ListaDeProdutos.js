@@ -43,7 +43,6 @@ export class ListaDeProdutos extends React.Component {
   }
 
   render() {
-    console.log(this.props.filtroBusca)
     // const mostraFiltrosOrdenados = this.mostraFiltrosOrdenados()
     const mostraFiltrosOrdenados = this.props.produtos.filter((produto) => {
       return produto.name.toUpperCase().includes(this.props.filtroBusca)
