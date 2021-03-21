@@ -20,29 +20,20 @@ const ImagemProduto = styled.img`
 `
 
 export default class Produto extends React.Component {
-    state = {
-        produto: {}
-    }
-
-    componentDidMount = () => {
-        this.props.produto.quantidade = 1;
-        this.setState({produto: this.props.produto})
-    }
-
     render() {
         return (
             <DivPrincipal>
                 <ImagemProduto 
-                    src={this.state.produto.imageUrl} 
+                    src={this.props.produto.imageUrl} 
                 />
 
                 <InfoProduto
-                    produto={this.state.produto}
+                    produto={this.props.produto}
                 />
 
                 <RemoveProduto 
                     removerDoCarrinho={this.props.removerDoCarrinho} 
-                    id={this.state.produto.id}
+                    id={this.props.produto.id}
                 />
             </DivPrincipal>
         )

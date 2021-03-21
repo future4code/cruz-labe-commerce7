@@ -57,7 +57,7 @@ export class ListaDeProdutos extends React.Component {
   }
 
   mostraFiltrosOrdenados = () => {
-    if(this.props.filtroMinimo > 0 || this.props.filtroMaximo > 0) {
+    if(this.props.filtroMinimo > 0 || this.props.filtroMaximo > 0 ) {
     return this.props.produtos
       .filter((produto) => this.props.filtroMaximo ? produto.value <= this.props.filtroMaximo : false)
       .filter((produto) => this.props.filtroMinimo ? produto.value >= this.props.filtroMinimo : false)
@@ -72,13 +72,16 @@ export class ListaDeProdutos extends React.Component {
 
   render() {
     const filtrosOrdenados = this.mostraFiltrosOrdenados()
+    .filter((produto) => {
+      return produto.name.toUpperCase().includes(this.props.filtroBusca)
+    })
     .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.value - b.value : b.value - a.value)
     return <DivPrincipal>
       <CaixaDeProdutos>
         <div>
           {this.props.filtroBusca !== '' && 
             <p>
-              <TextUpperCase>Produtos encontrado: {mostraFiltrosOrdenados.length}</TextUpperCase>
+              <TextUpperCase>Produtos encontrado: {filtrosOrdenados.length}</TextUpperCase>
             </p>
           }
         </div>

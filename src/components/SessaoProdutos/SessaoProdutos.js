@@ -12,8 +12,8 @@ const DivPrincipal = styled.div`
 
 export default class SessaoProdutos extends React.Component {
     state = {
-        filtroMinimo: 0,
-        filtroMaximo: 0,
+        filtroMinimo: '',
+        filtroMaximo: '',
     }
 
     onChangeFiltroMinimo = (event) => {
@@ -28,12 +28,25 @@ export default class SessaoProdutos extends React.Component {
         const produto = this.props.produtos.find(produto => id === produto.id)
 
         if(produto) {
-            const novoProduto = {
-                ...produto
+            const estaNoCarrinho = this.props.carrinho.find(produto => id === produto.id)
+
+            let novoCarrinho
+            if (!estaNoCarrinho) {
+                const novoProduto = {
+                    ...produto
+                }
+                
+                novoCarrinho = [...this.props.carrinho, novoProduto ]
+            } else {
+                novoCarrinho = this.props.carrinho.map(produto => {
+                    if (produto.id === id) {
+                        produto.quantidade = ++produto.quantidade
+                    }
+
+                    return produto
+                })
             }
 
-            const novoCarrinho = [...this.props.carrinho, novoProduto ]
-            
             this.props.atualizarCarrinho(novoCarrinho)
         }   
     }

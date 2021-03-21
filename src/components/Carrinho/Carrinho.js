@@ -83,6 +83,10 @@ const PrecoTotal = styled.span`
 
 export default class Carrinho extends React.Component {
     render() {
+        const valorTotal = this.props.produtos.reduce((acumulador, produto) => {
+            return acumulador + (produto.value * produto.quantidade)
+        }, 0)
+
         const produtos = this.props.produtos.map((produto) => {
             return <Produto 
                         key={produto.id.toString()} 
@@ -109,7 +113,7 @@ export default class Carrinho extends React.Component {
 
                     {produtos.length > 0 && 
                         <FinalizarCompra>
-                            <p>Total: <PrecoTotal>R$69,90</PrecoTotal></p>
+                            <p>Total: <PrecoTotal>R${valorTotal}</PrecoTotal></p>
                             <ButtonAction><TextUpperCase>Finalizar Compra</TextUpperCase></ButtonAction>
                         </FinalizarCompra>
                     }

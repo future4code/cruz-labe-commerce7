@@ -51,17 +51,17 @@ const ButtonAction = styled.button`
 `;
 
 export default class InfoProduto extends React.Component {
-  state = {
-    quantidadeProduto: 0,
-  };
+  // state = {
+  //   quantidadeProduto: 0,
+  // };
 
-  aumentarQuantidade = () => {
-    this.setState({quantidadeProduto: this.state.quantidadeProduto + 1})
-  };
+  // aumentarQuantidade = () => {
+  //   this.setState({quantidadeProduto: this.state.quantidadeProduto + 1})
+  // };
 
-  diminuirQuantidade = () => {
-    this.setState({quantidadeProduto: this.state.quantidadeProduto - 1})
-  }
+  // diminuirQuantidade = () => {
+  //   this.setState({quantidadeProduto: this.state.quantidadeProduto - 1})
+  // }
 
   render() {
     const produto = this.props.produto;
@@ -78,9 +78,9 @@ export default class InfoProduto extends React.Component {
             <TextUpperCase>Quantidade</TextUpperCase>
           </Title>
           <ButtonActionContainer>
-            <ButtonAction onClick={this.diminuirQuantidade}>-</ButtonAction>
-            <p>{this.state.quantidadeProduto}</p>
-            <ButtonAction onClick={this.aumentarQuantidade}>+</ButtonAction>
+            {/* <ButtonAction onClick={this.diminuirQuantidade}>-</ButtonAction> */}
+            <p>x{produto.quantidade}</p>
+            {/* <ButtonAction onClick={this.aumentarQuantidade}>+</ButtonAction> */}
           </ButtonActionContainer>
         </DivQuantidade>
       </DivPrincipal>
