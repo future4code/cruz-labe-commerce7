@@ -6,7 +6,7 @@ Este é um projeto de ecommerce em React js com styled-components.
 
 ![logo-labspace-store](https://user-images.githubusercontent.com/54940729/111920113-07fc2c00-8a6c-11eb-8712-668330622a89.png)
 
-### Summary
+### Sumário
 
   - [Publicação](#publicação)
   - [Lab Space Store](#lab-space-store)
