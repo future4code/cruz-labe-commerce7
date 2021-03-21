@@ -2,39 +2,56 @@ import React from 'react'
 import styled from 'styled-components';
 
 const ContainerDeFiltros = styled.div`
-  padding: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.38);
+  padding: 10px;
+  color: #ff7f50;
+  margin-top: 2%;
+
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
+
+  & > h3 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 1.4em;
+  }
+
+  & > span {
+    font-weight: bold;
+    font-size: 1.6em;
+  }
 `;
 
-const ContainerDoInput = styled.label`
-  
+const Input = styled.input`
+  padding: 8px;
+  margin: 0 4px 0 2%;
+  font-size: 1em;
+  border: none;
+  width: 120px;
+  outline-color: #ff7f50;
+  letter-spacing: 2px;
 `
 
 export default class Filtro extends React.Component {
   render() {
     return <ContainerDeFiltros>
-      {/* <h3>Filtros</h3> */}
-        <ContainerDoInput>
-          Valor mínimo:
-          <input
-            type="number" 
-            min="0"
-            value={this.props.filtroMinimo}
-            onChange={this.props.handleMinValor}
-          />
-        </ContainerDoInput>
-        <ContainerDoInput>
-          Valor máximo:
-          <input
-            type="number"
-            min="0"
-            value={this.props.filtroMaximo}
-            onChange={this.props.handleMaxValor}
-          />
-        </ContainerDoInput>
+      <h3>Filtro:</h3>
+
+      <Input 
+        type="number"
+        min="0"
+        value={this.props.filtroMinimo}
+        onChange={this.props.handleMinValor}
+        placeholder="Valor mínimo"
+      />
+      <span>-</span>
+      <Input 
+        type="number"
+        min="0"
+        value={this.props.filtroMaximo}
+        onChange={this.props.handleMaxValor}
+        placeholder="Valor máximo"
+      />
     </ContainerDeFiltros>
   }
 }

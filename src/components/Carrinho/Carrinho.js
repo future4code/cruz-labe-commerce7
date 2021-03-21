@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import Produto from './Produto/Produto'
 
+import setaEsquerdaIcon from '../../icons/seta-esquerda.png'
+
 const DivPrincipal = styled.div`
     grid-row: 2 / 3; 
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -41,10 +43,37 @@ const FinalizarCompra = styled.div`
     }
 `
 
+const VoltarParaProdutos = styled.div`
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    width: 10%;
+    transition: all .4s;
+    
+    &:hover {
+        transform: scale(1.04);
+        cursor: pointer;
+        letter-spacing: 3px;
+    }
+
+    & > img {
+        width: 28px;
+        margin-right: 4px;
+    }
+
+    & > span {
+        margin-top: 5px;
+        color: #ff7f50;
+        font-weight: 500;
+    }
+`
+
 const ButtonAction = styled.button`
     text-align: center;
     width: 20%;
     font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 2px;
 `
 
 const PrecoTotal = styled.span`
@@ -65,12 +94,19 @@ export default class Carrinho extends React.Component {
         return (
             <DivPrincipal>
                 <DivFlexColumn>
+                    <VoltarParaProdutos onClick={this.props.voltarParaProdutos}>
+                        <img src={setaEsquerdaIcon} alt='' />
+                        <TextUpperCase>Voltar</TextUpperCase>
+                    </VoltarParaProdutos>
+
                     <h1>
                         <TextUpperCase>Carrinho</TextUpperCase>
                     </h1>
+
                     <ContainerProdutos>
                         {produtos}
                     </ContainerProdutos>
+
                     {produtos.length > 0 && 
                         <FinalizarCompra>
                             <p>Total: <PrecoTotal>R$69,90</PrecoTotal></p>

@@ -91,6 +91,7 @@ export default class Main extends React.Component {
                     <Carrinho 
                         produtos={this.state.carrinho}
                         removerDoCarrinho={this.removerDoCarrinho}
+                        voltarParaProdutos={this.props.voltarParaProdutos}
                     />
                 }
 

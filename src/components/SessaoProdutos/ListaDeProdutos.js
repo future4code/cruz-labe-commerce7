@@ -18,6 +18,36 @@ const CaixaDeProdutos = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
+  letter-spacing: 1.4px;
+  margin-top: 1%;
+  font-size: 1.2em;
+
+  & > select {
+    text-transform: uppercase;
+    font-size: 1.4em;
+  }
+`
+const Select = styled.select`
+  display: flex;
+  text-transform: uppercase;
+  font-size: .8em;
+  border: none;
+  background-color: white;
+  letter-spacing: 1px;
+  cursor: pointer;
+  outline: none;
+  color: #ff7f50;
+  font-weight: 700;
+`
+
+
+const Option = styled.option`
+  display: flex;
+`
+
+const TextUpperCase = styled.span`
+  text-transform: uppercase;
 `
 
 export class ListaDeProdutos extends React.Component {
@@ -45,13 +75,19 @@ export class ListaDeProdutos extends React.Component {
     .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.value - b.value : b.value - a.value)
     return <DivPrincipal>
       <CaixaDeProdutos>
-          <p>Quantidade de produtos: {filtrosOrdenados.length}</p>
+        <div>
+          {this.props.filtroBusca !== '' && 
+            <p>
+              <TextUpperCase>Produtos encontrado: {mostraFiltrosOrdenados.length}</TextUpperCase>
+            </p>
+          }
+        </div>
           <label>
-            Ordenação:
-          <select value={this.state.sort} onChange={this.onChangeSort}>
-              <option value={'CRESCENTE'}>Crescente</option>
-              <option value={'DECRESCENTE'}>Decrescente</option>
-            </select>
+            <TextUpperCase>Ordenação:</TextUpperCase>
+          <Select value={this.state.sort} onChange={this.onChangeSort}>
+              <Option value={'CRESCENTE'}>Crescente</Option>
+              <Option value={'DECRESCENTE'}>Decrescente</Option>
+            </Select>
           </label>
         </CaixaDeProdutos>
       <ContainerDeProdutos>
