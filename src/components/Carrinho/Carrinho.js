@@ -71,10 +71,12 @@ export default class Carrinho extends React.Component {
                     <ContainerProdutos>
                         {produtos}
                     </ContainerProdutos>
-                    <FinalizarCompra>
-                        <p>Total: <PrecoTotal>R$69,90</PrecoTotal></p>
-                        <ButtonAction><TextUpperCase>Finalizar Compra</TextUpperCase></ButtonAction>
-                    </FinalizarCompra>
+                    {produtos.length > 0 && 
+                        <FinalizarCompra>
+                            <p>Total: <PrecoTotal>R$69,90</PrecoTotal></p>
+                            <ButtonAction><TextUpperCase>Finalizar Compra</TextUpperCase></ButtonAction>
+                        </FinalizarCompra>
+                    }
                 </DivFlexColumn>
             </DivPrincipal>
         )
