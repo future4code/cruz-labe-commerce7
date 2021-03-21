@@ -83,11 +83,11 @@ npm install
 ```
 <br/>
 
-Pós instalalão das dependências, execute o comando necessário para rodar o projeto:
+Pós instalação das dependências, execute o comando necessário para rodar o projeto:
 `npm start`
 <br/>
 
-Por padrão a aplicação rodará na porta 3000 localmente.
+Por padrão a aplicação rodará localmente na porta 3000.
 <br/><br/>
 
 ### Agradecimentos
