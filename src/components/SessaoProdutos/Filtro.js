@@ -10,7 +10,7 @@ const ContainerDoInput = styled.label`
 
 `
 
-export class Filtros extends React.Component {
+export class Filtro extends React.Component {
   render() {
     return <ContainerDeFiltros>
       <h3>Filtros</h3>
