@@ -45,36 +45,12 @@ export default class Main extends React.Component {
             }
         ],
 
-        carrinho: [
-            {
-                id: 1,
-                name: 'Camiseta Renan de Almeida',
-                value: 69.90,
-                imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
-                quantidade: 0,
-            },
-
-            // {
-            //     id: 2,
-            //     name: 'Camiseta Renan de Almeida',
-            //     value: 69.90,
-            //     imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
-            //     quantidade: 0
-            // },
-
-            // {
-            //     id: 3,
-            //     name: 'Camiseta Renan de Almeida',
-            //     value: 69.90,
-            //     imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
-            //     quantidade: 0
-            // }
-        ]
+        carrinho: []
     }
 
     atualizarCarrinho = (novoCarrinho) => {
         this.setState({carrinho: novoCarrinho})
-        this.props.atualizaQuantidadeCarrinho(this.state.carrinho.length)
+        this.props.atualizaQuantidadeCarrinho(novoCarrinho.length)
     }
 
     onChangeFiltroMaximo = (event) => {
@@ -95,6 +71,7 @@ export default class Main extends React.Component {
         })
 
         this.setState({carrinho: produtosFiltrados})
+        this.props.atualizaQuantidadeCarrinho(this.state.carrinho.length -1)
     }
 
     render() {
