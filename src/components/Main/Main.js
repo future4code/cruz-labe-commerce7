@@ -1,8 +1,8 @@
 import React from "react"
-import {Filtros} from "./Filtros"
 import styled from 'styled-components'
 
 import Carrinho from '../Carrinho/Carrinho'
+import SessaoProdutos from "../SessaoProdutos/SessaoProdutos"
 
 
 const DivPrincipal = styled.div`
@@ -34,10 +34,18 @@ export default class Main extends React.Component {
                 value: 69.90,
                 imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51AZtyHT-4L._AC_UL1000_.jpg',
                 quantidade: 1
+            },
+
+            {
+                id: 4,
+                name: 'Camiseta Lua e Astronauta',
+                value: 69.90,
+                imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51AZtyHT-4L._AC_UL1000_.jpg',
+                quantidade: 1
             }
         ],
 
-        produtosCarrinho: [
+        carrinho: [
             {
                 id: 1,
                 name: 'Camiseta Renan de Almeida',
@@ -46,29 +54,27 @@ export default class Main extends React.Component {
                 quantidade: 0,
             },
 
-            {
-                id: 2,
-                name: 'Camiseta Renan de Almeida',
-                value: 69.90,
-                imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
-                quantidade: 0
-            },
+            // {
+            //     id: 2,
+            //     name: 'Camiseta Renan de Almeida',
+            //     value: 69.90,
+            //     imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
+            //     quantidade: 0
+            // },
 
-            {
-                id: 3,
-                name: 'Camiseta Renan de Almeida',
-                value: 69.90,
-                imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
-                quantidade: 0
-            }
+            // {
+            //     id: 3,
+            //     name: 'Camiseta Renan de Almeida',
+            //     value: 69.90,
+            //     imageUrl: 'https://images.tcdn.com.br/img/img_prod/697287/camiseta_espaco_sideral_ceu_colorido_7363_1_20191114114454.jpg',
+            //     quantidade: 0
+            // }
         ]
     }
 
-
-    state = {
-        filtroMinimo: 100,
-        filtroMaximo: 100,
-        filtroNome: 'Produto'
+    atualizarCarrinho = (novoCarrinho) => {
+        this.setState({carrinho: novoCarrinho})
+        this.props.atualizaQuantidadeCarrinho(this.state.carrinho.length)
     }
 
     onChangeFiltroMaximo = (event) => {
@@ -83,51 +89,19 @@ export default class Main extends React.Component {
     //     this.setState({filtroNome: event.target.value})
     // }
 
-
-
-    adicionarAoCarrinho = (id) => {
-        const produto = this.state.produtos.find(produto => id === produto.id)
-
-        if(produto) {
-            const novoProduto = {
-                ...produto
-            }
-
-            const novoProdutosCarrinho = [...this.state.produtosCarrinho, novoProduto ]
-            
-            // const novoProdutosCarrinho = this.state.produtosCarrinho.map(
-            //   (produto) => {
-            //     if (id === this.state.produtos.id) {
-            //         produto.quantidade += 1
-            //         return produto
-            //     }
-            //     return produto;
-            //   }
-            // )
-            
-
-            this.setState({produtosCarrinho: novoProdutosCarrinho})
-        }
-            // const produtoAdicionado = produtos.find(produto => id === produto.id)
-            // const novoProdutosCarrinho = [...this.state.produtosCarrinho, {...produtoAdicionado, quantidade: 1}]
-            // this.setState({produtosCarrinho: novoProdutosCarrinho})
-        
-    }
-
-
     removerDoCarrinho = (id) => {
-        const produtosFiltrados = this.state.produtosCarrinho.filter(produto => {
+        const produtosFiltrados = this.state.carrinho.filter(produto => {
             return produto.id !== id ? true : false
         })
 
-        this.setState({produtosCarrinho: produtosFiltrados})
+        this.setState({carrinho: produtosFiltrados})
     }
 
     render() {
         console.log(this.props.filtroBusca)
         return (
             <DivPrincipal>
-                <Filtros
+                {/* <Filtros
                     // filtroNome={this.state.filtroNome}
                     filtroMaximo={this.state.filtroMaximo}
                     filtroMinimo={this.state.filtroMinimo}
@@ -135,20 +109,28 @@ export default class Main extends React.Component {
                     onChangeFiltroMaximo={this.onChangeFiltroMaximo}
                     onChangeFiltroMinimo={this.onChangeFiltroMinimo}
                 />
-                {/* <Produtos
+                <Produtos
                     produtos={produtos}
                     // filtroNome={this.state.filtroNome}
                     filtroMaximo={this.state.filtroMaximo}
                     filtroMinimo={this.state.filtroMinimo}
                     adicionarAoCarrinho={this.adicionarAoCarrinho}
                 /> */}
+                {!this.props.exibindoCarrinho && 
+                    <SessaoProdutos 
+                        produtos={this.state.produtos}
+                        carrinho={this.state.carrinho}
+                        atualizarCarrinho={this.atualizarCarrinho}
+                        filtroBusca={this.props.filtroBusca}
+                    /> 
+                }
+
                 {this.props.exibindoCarrinho &&
                     <Carrinho 
-                        produtos={this.state.produtosCarrinho}
+                        produtos={this.state.carrinho}
                         removerDoCarrinho={this.removerDoCarrinho}
                     />
                 }
-                {/* {!this.props.exibindoCarrinho && //CHAMAR PRODUTOS } */}
 
             </DivPrincipal>
         )

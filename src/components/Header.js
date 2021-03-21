@@ -62,6 +62,7 @@ export default class Header extends React.Component {
               className="Carrinho-img"
               onClick={this.props.exibindoCarrinho}
             ></img>
+            <span>{this.props.quantidadeNoCarrinho}</span>
           </div>
         </div>
       </header>

@@ -9,8 +9,9 @@ import Main from './components/Main/Main';
 
 class App extends React.Component { 
   state = {
-    exibindoCarrinho: true,
-    filtroNome: ''
+    exibindoCarrinho: false,
+    filtroBusca: '',
+    quantidadeNoCarrinho: 0
   }
 
   exibindoCarrinho = () => {
@@ -18,7 +19,11 @@ class App extends React.Component {
   }
 
   setFiltroBusca = (value) => {
-    this.setState({filtroBusca: value})
+    this.setState({filtroBusca: value.toUpperCase()});
+  }
+
+  atualizaQuantidadeCarrinho = (quantidade) => {
+    this.setState({quantidadeNoCarrinho: quantidade})
   }
 
   render() {
@@ -28,10 +33,12 @@ class App extends React.Component {
           <Header 
             setFiltroBusca={this.setFiltroBusca}
             exibindoCarrinho={this.exibindoCarrinho}
+            quantidadeNoCarrinho={this.state.quantidadeNoCarrinho}
           />
           <Main 
             exibindoCarrinho={this.state.exibindoCarrinho} 
-            filtroNome={this.state.filtroNome}
+            filtroBusca={this.state.filtroBusca}
+            atualizaQuantidadeCarrinho={this.atualizaQuantidadeCarrinho}
           />
           <Footer />
         </div>
