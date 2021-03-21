@@ -1,4 +1,4 @@
-# Sejam bem vindos a Lab Space Store! Um projeto inspirado no desafio Labe-commerce.
+## Sejam bem vindos a Lab Space Store! <br/> Um projeto inspirado no desafio Labe-commerce.
 <br/>
 Este é um projeto de ecommerce em React js com styled-components.
 <br/><br/>
