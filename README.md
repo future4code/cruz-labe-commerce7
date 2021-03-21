@@ -31,7 +31,7 @@ Projeto LabSpace Store publicado na plataform surge:
 
 <br/><br/>
 
-### Requisitos do projeto - MVP
+### Requisitos do projeto
 
 - [X] Home
     - Mostrando todos os produtos
@@ -49,7 +49,7 @@ Projeto LabSpace Store publicado na plataform surge:
 
 <br/><br/>
 
-### Status do projeto MVP
+### Status do projeto
 <br/>
 #### Em funcionamento
 - Requisitos da home
@@ -60,7 +60,7 @@ Projeto LabSpace Store publicado na plataform surge:
 #### Em construção ... 🚧
 - Capacidade de remover itens do carrinho
 - Mostrar o valor total do carrinho
-- Extras, além do MVP
+- Extras, além do projeto MVP
 
 <br/><br/>
 
@@ -87,15 +87,16 @@ Pós instalalão das dependências, execute o comando necessário para rodar o p
 <br/>
 
 Por padrão a aplicação rodará na porta 3000 localmente.
-<br/><br/
+<br/><br/>
 
 ### Agradecimentos
 
 <p>Sem dúvidas, cada momento de trabalho em equipe é um momento único de aprendizagem e troca de experiências. E fazer parte desta equipe não foi diferente, mas com um passo além...
 Obrigada aos colegas e profissionais brilhantes Isaac e Fabiana, pelo senso de cooperação, de troca e pela sensibilidade na parceria com foco no crescimento mútuo. 
 Pessoas e profissionais assim, são senão espelhos e inspirações nas coisas que podemos melhorar continuamente para apresentar um resultado fantástico! Parabéns pelo projeto time! Vocês são sensacionais...</p>
-<br/>
+
 * Laís Lopes - https://www.linkedin.com/in/laismaas/
+<br/>
 
 ### Créditos
 
