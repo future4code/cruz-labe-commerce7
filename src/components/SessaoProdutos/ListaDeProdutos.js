@@ -20,37 +20,32 @@ const CaixaDeProdutos = styled.div`
   justify-content: space-between;
 `
 
-const GridDeProdutos = styled.div`
-
-`
-
 export class ListaDeProdutos extends React.Component {
 
   state = {
     sort: 'DECRESCENTE'
   }
 
-  // mostraFiltrosOrdenados = () => {
-  //   return this.props.produtos
-  //     .filter((produto) => this.props.filtroMaximo ? produto.value < this.props.filtroMaximo : true)
-  //     .filter((produto) => this.props.filtroMinimo ? produto.value > this.props.filtroMinimo : true)
-  //     //   .filter((produto) => this.props.filtroNome ? product.name.includes(this.props.filtroNome) : true)
-  //     .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.value - b.value : b.value - a.value)
-  // }
+  mostraFiltrosOrdenados = () => {
+    if(this.props.filtroMinimo > 0 || this.props.filtroMaximo > 0) {
+    return this.props.produtos
+      .filter((produto) => this.props.filtroMaximo ? produto.value <= this.props.filtroMaximo : false)
+      .filter((produto) => this.props.filtroMinimo ? produto.value >= this.props.filtroMinimo : false)
+    } else {
+      return this.props.produtos
+    }
+  }
 
   onChangeSort = (event) => {
     this.setState({ sort: event.target.value })
   }
 
   render() {
-    // const mostraFiltrosOrdenados = this.mostraFiltrosOrdenados()
-    const mostraFiltrosOrdenados = this.props.produtos.filter((produto) => {
-      return produto.name.toUpperCase().includes(this.props.filtroBusca)
-    })
-
+    const filtrosOrdenados = this.mostraFiltrosOrdenados()
+    .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.value - b.value : b.value - a.value)
     return <DivPrincipal>
       <CaixaDeProdutos>
-          <p>Quantidade de produtos: {mostraFiltrosOrdenados.length}</p>
+          <p>Quantidade de produtos: {filtrosOrdenados.length}</p>
           <label>
             Ordenação:
           <select value={this.state.sort} onChange={this.onChangeSort}>
@@ -60,15 +55,14 @@ export class ListaDeProdutos extends React.Component {
           </label>
         </CaixaDeProdutos>
       <ContainerDeProdutos>
-          {mostraFiltrosOrdenados.map((produto) => {
+          {filtrosOrdenados.map((produto) => {
           return <CardProduto
             produto={produto}
             adicionarAoCarrinho={this.props.adicionarAoCarrinho}
           />
-        })} 
-          {/* <CardProduto produto={this.props.produtos[0]} /> */}
-        
+        })}        
       </ContainerDeProdutos>
     </DivPrincipal>
   }
 }
+

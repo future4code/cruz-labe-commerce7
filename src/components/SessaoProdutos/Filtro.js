@@ -2,22 +2,26 @@ import React from 'react'
 import styled from 'styled-components';
 
 const ContainerDeFiltros = styled.div`
-  border: 1px solid black;
-  padding: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 const ContainerDoInput = styled.label`
-
+  
 `
 
-export class Filtro extends React.Component {
+export default class Filtro extends React.Component {
   render() {
     return <ContainerDeFiltros>
-      <h3>Filtros</h3>
+      {/* <h3>Filtros</h3> */}
         <ContainerDoInput>
           Valor mínimo:
           <input
-            type="number"
+            type="number" 
+            min="0"
             value={this.props.filtroMinimo}
             onChange={this.props.handleMinValor}
           />
@@ -26,18 +30,11 @@ export class Filtro extends React.Component {
           Valor máximo:
           <input
             type="number"
+            min="0"
             value={this.props.filtroMaximo}
             onChange={this.props.handleMaxValor}
           />
         </ContainerDoInput>
-        {/* <ContainerDoInput>
-          Busca por nome:
-          <input
-            type="text"
-            value={this.props.filtroNome}
-            onChange={this.props.onChangeFiltroNome}
-          />
-        </ContainerDoInput> */}
     </ContainerDeFiltros>
   }
 }

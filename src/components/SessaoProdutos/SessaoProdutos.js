@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-import { Filtro } from './Filtro';
+// import { Filtro } from './Filtro';
+import Filtro from "../SessaoProdutos/Filtro"
 
 import { ListaDeProdutos } from './ListaDeProdutos';
 
@@ -11,16 +12,16 @@ const DivPrincipal = styled.div`
 
 export default class SessaoProdutos extends React.Component {
     state = {
-        filtroMinimo: 100,
-        filtroMaximo: 100,
-    }
-
-    onChangeFiltroMaximo = (event) => {
-        this.setState({filtroMaximo: event.target.value})
+        filtroMinimo: 0,
+        filtroMaximo: 0,
     }
 
     onChangeFiltroMinimo = (event) => {
         this.setState({filtroMinimo: event.target.value})
+    }
+
+    onChangeFiltroMaximo = (event) => {
+        this.setState({filtroMaximo: event.target.value})
     }
 
     adicionarAoCarrinho = (id) => {
@@ -33,15 +34,6 @@ export default class SessaoProdutos extends React.Component {
 
             const novoCarrinho = [...this.props.carrinho, novoProduto ]
             
-            // const novoCarrinho = this.state.carrinho.map(
-            //   (produto) => {
-            //     if (id === this.state.produtos.id) {
-            //         produto.quantidade += 1
-            //         return produto
-            //     }
-            //     return produto;
-            //   }
-            // )
             this.props.atualizarCarrinho(novoCarrinho)
         }   
     }
@@ -52,11 +44,15 @@ export default class SessaoProdutos extends React.Component {
                 <Filtro 
                     handleMinValor={this.onChangeFiltroMinimo}
                     handleMaxValor={this.onChangeFiltroMaximo}
+                    filtroMinimo={this.state.filtroMinimo}  
+                    filtroMaximo={this.state.filtroMaximo}  
                 />
                 <ListaDeProdutos 
                     produtos={this.props.produtos}
                     adicionarAoCarrinho={this.adicionarAoCarrinho}
-                    filtroBusca={this.props.filtroBusca}    
+                    filtroBusca={this.props.filtroBusca}
+                    filtroMinimo={this.state.filtroMinimo}  
+                    filtroMaximo={this.state.filtroMaximo}  
                 />
             </DivPrincipal>
         )
