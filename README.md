@@ -48,7 +48,6 @@ Projeto LabSpace Store publicado na plataform surge:
 <br/><br/>
 
 ### Status do projeto
-<br/>
 
 #### Em funcionamento
 - Requisitos da home
