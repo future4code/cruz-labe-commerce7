@@ -52,13 +52,11 @@ Projeto LabSpace Store publicado na plataform surge:
 #### Em funcionamento
 - Requisitos da home
 - Requisitos de produtos
-- Carrinho de compras (exceto funcionalidades relacionadas em construção)
+- Carrinho de compras 
 - Requisitos de filtro
 
 #### Em construção ... 🚧
-- Capacidade de remover itens do carrinho
-- Mostrar o valor total do carrinho
-- Extras, além do projeto MVP
+- Extras, além do projeto MVP 
 <br/><br/>
 
 ### Tecnologias
@@ -90,15 +88,16 @@ Por padrão a aplicação rodará localmente na porta 3000.
 <p>
 Sem dúvidas, cada momento de trabalho em equipe é um momento único de aprendizagem e troca de experiências.<br/>
 E fazer parte desta equipe não foi diferente, mas com um passo além...<br/>
-Obrigada aos colegas e profissionais brilhantes Isaac e Fabiana, pelo senso de cooperação, de troca e pela sensibilidade na parceria com foco no crescimento mútuo.
-Pessoas e profissionais assim, são senão espelhos e inspirações nas coisas que podemos melhorar continuamente para apresentar um resultado fantástico!<br/> Parabéns pelo projeto time! Vocês são sensacionais...</p>
+Obrigada aos colegas e profissionais brilhantes Isaac e Fabiana, pelo senso de cooperação, de troca e pela sensibilidade na parceria com foco no crescimento mútuo.<br/>
+Parabéns pelo projeto time! Vocês são sensacionais...</p>
 
 * Laís Lopes - https://www.linkedin.com/in/laismaas/
 <br/>
 
 ### Créditos
 
-* José Isaac - https://www.linkedin.com/in/jose-isaac/
 * Fabiana Genila - https://www.linkedin.com/in/fabiana-genila-ramos-pereira-9b849923/ 
+* José Isaac - https://www.linkedin.com/in/jose-isaac/
+
 
 
