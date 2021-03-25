@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  header {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    padding: 10px;
+    background-color: #FAFAFF;
+  }
+
+  .App-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .App-header > div {
+      display: flex;
+      align-items: center;
+  }
+
+  .App-header h2 {
+      letter-spacing: 2px;
+      font-size: 2em;
+  }
+  
+  .Logo {
+      height: 70px;
+      width: 70px;
+      float: left;
+  }
+  
+  h2 {
+      float: left;
+      padding: 10px;
+  }
+  
+  .buscador {
+      text-align: center;
+      margin: 15px 0;
+  }
+  
+  button {
+    display: inline-block;
+    padding: 6px;
+    width: 60px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    background-color: orange;
+    border: tomato 2px solid;
+    border-radius: 5px;
+  }
+  
+  button:hover {background-color: red}
+  
+  
+  .Carrinho-img {
+      height: 60px;
+      width: 60px;
+      float: right;
+      padding: 5px;
+  }
+
+  .divCarrinho {
+      position: relative;
+  }
+
+  .divCarrinho:hover {
+    cursor: pointer;
+  }
+
+  .qtdProduto {
+      position: absolute;
+      right: 10px;
+      top: 6px;
+      background-color: #ff7f50;
+      padding: 6px;
+      color: white;
+      border-radius: 70px;
+      font-weight: bold;
+      font-size: 1em;
+  }
+
+  #textoLaranja {
+      color: #ff7f50;
+  }
+  

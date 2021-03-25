@@ -1,26 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Footer from './components/Footer/Footer';
+import Header from './components/Header'
+
+
+import Main from './components/Main/Main';
+
+class App extends React.Component { 
+  state = {
+    exibindoCarrinho: false,
+    filtroBusca: '',
+    quantidadeNoCarrinho: 0
+  }
+
+  exibindoCarrinho = () => {
+    this.setState({exibindoCarrinho: !this.state.exibindoCarrinho});
+  }
+
+  setFiltroBusca = (value) => {
+    this.setState({filtroBusca: value.toUpperCase()});
+  }
+
+  atualizaQuantidadeCarrinho = (quantidade) => {
+    console.log(quantidade)
+    this.setState({quantidadeNoCarrinho: quantidade})
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <div>
+          <Header 
+            setFiltroBusca={this.setFiltroBusca}
+            exibindoCarrinho={this.exibindoCarrinho}
+            quantidadeNoCarrinho={this.state.quantidadeNoCarrinho}
+          />
+          <Main 
+            exibindoCarrinho={this.state.exibindoCarrinho} 
+            filtroBusca={this.state.filtroBusca}
+            atualizaQuantidadeCarrinho={this.atualizaQuantidadeCarrinho}
+            voltarParaProdutos={this.exibindoCarrinho}
+          />
+          <Footer />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
